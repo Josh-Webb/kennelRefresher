@@ -15,9 +15,9 @@ class NavBar extends Component {
           <ul className="container">
             <li><Link className="nav-link" to="/">Home</Link></li>
             <li><Link className="nav-link" to="/animals">Animals</Link></li>
-            <li><Link className="nav-link" to="/locations"></Link>Locations</li>
-            <li><Link className="nav-link" to="/employees"></Link>Employees</li>
-            <li><Link className="nav-link" to="/owners"></Link>Owners</li>
+            <li><Link className="nav-link" to="/locations">Locations</Link></li>
+            <li><Link className="nav-link" to="/employees">Employees</Link></li>
+            <li><Link className="nav-link" to="/owners">Owners</Link></li>
           </ul>
         </nav>
       </header>
