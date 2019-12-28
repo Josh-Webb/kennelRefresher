@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import OwnerCard from './OwnerCard'
-import OwnerManager from '../../modules/OwnerManager'
+import OwnerManager 
+from '../../modules/OwnerManager'
 
 class OwnerList extends Component {
     state = {
