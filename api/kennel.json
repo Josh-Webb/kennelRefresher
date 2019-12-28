@@ -3,5 +3,22 @@
         { "id": 1, "name": "Doodles", "breed": "Poodle"},
         { "id": 2, "name": "Decker", "breed": "German Sheperd" },
         { "id": 3, "name": "Esme", "breed": "Pitbull" }
+    ],
+    "locations": [
+        { "id": 1, "address": "1901 Sevier St", "city": "Nashville, TN"},
+        { "id": 2, "address": "912th S 14th St", "city": "Nashville, TN"},
+        { "id": 3, "address": "408 West College St", "city": "Greenbrier, TN"}
+
+    ],
+    "owners": [
+        { "id": 1, "phoneNumber": "615-389-0465", "name": "Josh"},
+        { "id": 2, "phoneNumber": "555-282-0082", "name": "Elena"},
+        { "id": 1, "phoneNumber": "615-989-0077", "name": "Dexter"},
+        { "id": 1, "phoneNumber": "615-643-2774", "name": "Morgan"}
+    ],
+    "employees": [
+        { "id": 1, "name": "Debra"},
+        { "id": 2, "name": "Holden"},
+        { "id": 3, "name": "George"}
     ]
 }
