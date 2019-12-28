@@ -23,7 +23,7 @@ class LocationList extends Component {
 
         return(
             <div className="container-cards">
-                {this.state.locations.map(location => <LocationCard />)}
+                {this.state.locations.map(location => <LocationCard key={location.id} location={location}/>)}
             </div>
         )
     }
