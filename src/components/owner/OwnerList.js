@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import OwnerCard from './OwnerCard'
-import OwnerManager from '../../modules/OwnerManager'
+import OwnerManager 
+from '../../modules/OwnerManager'
 
 class OwnerList extends Component {
     state = {
@@ -22,9 +23,21 @@ class OwnerList extends Component {
 
         return(
             <div className="container-cards">
-                {this.state.owners.map(owner => <OwnerCard key={owner.id} owner={owner} />)}
+                {this.state.owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner}/>)}
             </div>
         )
+    }
+
+    deleteOwner = id => {
+        OwnerManager.delete(id)
+            .then(() => {
+                OwnerManager.getAll()
+                    .then((newOwners) => {
+                        this.setState({
+                            owners: newOwners
+                        })
+                    })
+            })
     }
 }
 

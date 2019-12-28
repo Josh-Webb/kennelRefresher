@@ -22,9 +22,21 @@ class EmployeeList extends Component {
 
         return(
             <div className="container-cards">
-                {this.state.employees.map(employee => <EmployeeCard key={employee.id} employee={employee}/>)}
+                {this.state.employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee}/>)}
             </div>
         )
+    }
+
+    deleteEmployee = id => {
+        EmployeeManager.delete(id)
+            .then(() => {
+                EmployeeManager.getAll()
+                    .then((newEmployees) => {
+                        this.setState({
+                            employees: newEmployees
+                        })
+                    })
+            })
     }
 }
 
