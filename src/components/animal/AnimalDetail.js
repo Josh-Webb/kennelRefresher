@@ -38,6 +38,13 @@ class AnimalDetail extends Component {
       </div>
     );
   }
+
+  handleDelete = () => {
+      //invoke the delete function in AnimalManager and re-direct to the animal list.
+      this.setState({loadingStatus: true})
+      AnimalManager.delete(this.props.animalId)
+      .then(() => this.props.history.push("/animals"))
+  }
 }
 
 export default AnimalDetail;
