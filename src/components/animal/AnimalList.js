@@ -25,7 +25,15 @@ render(){
     console.log("ANIMAL LIST: Render");
 
         return(
+            
             <div className="container-cards">
+                <section className="section-content">
+            <button type="button"
+                className="btn"
+                onClick={() => {this.props.history.push("/animals/new")}}>
+                Admit Animal
+            </button>
+            </section>
                 {this.state.animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={this.deleteAnimal}/>)}
             </div>
         );
