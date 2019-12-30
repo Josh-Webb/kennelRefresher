@@ -7,6 +7,7 @@ class AnimalDetail extends Component {
   state = {
       name: "",
       breed: "",
+      loadingStatus: true,
   }
 
   componentDidMount(){
@@ -16,7 +17,8 @@ class AnimalDetail extends Component {
     .then((animal) => {
       this.setState({
         name: animal.name,
-        breed: animal.breed
+        breed: animal.breed,
+        loadingStatus: false
       });
     });
   }
@@ -28,8 +30,10 @@ class AnimalDetail extends Component {
           <picture>
             <img src={require('./dog.svg')} alt="My Dog" />
           </picture>
+          <h4>Details</h4>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Breed: {this.state.breed}</p>
+            <button type="button" disabled={this.state.loadingStatus} onClick={this.handleDelete}>Discharge</button>
         </div>
       </div>
     );
