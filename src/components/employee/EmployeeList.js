@@ -30,7 +30,7 @@ class EmployeeList extends Component {
                             New Employee
                     </button>
                 </section>
-                {this.state.employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee}/>)}
+                {this.state.employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee} {...this.props}/>)}
             </div>
         )
     }
