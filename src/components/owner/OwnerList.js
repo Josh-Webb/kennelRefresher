@@ -23,6 +23,11 @@ class OwnerList extends Component {
 
         return(
             <div className="container-cards">
+                <button type="button"
+                className="btn"
+                onClick={() => {this.props.history.push("/owners/new")}}>
+                New Owner
+            </button>
                 {this.state.owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner}/>)}
             </div>
         )
