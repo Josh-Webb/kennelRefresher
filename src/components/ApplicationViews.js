@@ -14,6 +14,7 @@ import EmployeeForm from './employee/EmployeeForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
 import AnimalEditForm from './animal/AnimalEditForm'
+import EmployeeEditForm from './employee/EmployeeEditForm'
 
 
 class ApplicationViews extends Component {
@@ -80,6 +81,11 @@ class ApplicationViews extends Component {
               return <Redirect to="/login" />
             }
         }} />
+        <Route
+          path="/employees/:employeeId(\d+)/edit" render={props => {
+            return <EmployeeEditForm {...props} />
+          }}
+        />
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
