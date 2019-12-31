@@ -85,7 +85,10 @@ class ApplicationViews extends Component {
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props}/>
         }} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" component={Login} 
+          
+        
+        />
       </React.Fragment>
     )
   }
