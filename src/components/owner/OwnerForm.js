@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import LocationManager from '../../modules/LocationManager';
-import './LocationForm.css'
+import OwnerManager from '../../modules/OwnerManager';
+import './OwnerForm.css'
 
-class LocationForm extends Component {
+class OwnerForm extends Component {
     state = {
-        address: "",
-        city: "",
+        name: "",
+        phoneNumber: "",
         loadingStatus: false,
     };
 
@@ -15,24 +15,27 @@ class LocationForm extends Component {
         this.setState(stateToChange);
     };
 
-    constructNewLocation = evt => {
+    /*  Local method for validation, set loadingStatus, create Owner      object, invoke the OwnerManager post method, and redirect to the full Owner list
+    */
+    constructNewOwner = evt => {
         evt.preventDefault();
-        if (this.state.address === "" || this.state.city === "") {
-            window.alert("Please input a location address and city")
+        if (this.state.name === "" || this.state.phoneNumber === "") {
+            window.alert("Please input an Owner name and phoneNumber");
         } else {
             this.setState({ loadingStatus: true });
-            const location = {
-                address: this.state.address,
-                city: this.state.city,
+            const owner = {
+                name: this.state.name,
+                phoneNumber: this.state.phoneNumber,
             };
 
-            LocationManager.post(location)
-            .then(() => this.props.history.push("/locations"));
+            // Create the Owner and redirect user to Owner list
+            OwnerManager.post(owner)
+            .then(() => this.props.history.push("/owners"));
         }
     };
 
     render(){
-        console.log("LocationForm: RENDER");
+
         return(
             <>
             <form>
@@ -42,31 +45,31 @@ class LocationForm extends Component {
                         type="text"
                         required
                         onChange={this.handleFieldChange}
-                        id="address"
-                        placeholder="Address"
+                        id="name"
+                        placeholder="Owner name"
                         />
-                        <label htmlFor="address">Address</label>
+                        <label htmlFor="name">Name</label>
                         <input
                         type="text"
                         required
                         onChange={this.handleFieldChange}
-                        id="city"
-                        placeholder="City, State"
+                        id="phoneNumber"
+                        placeholder="phoneNumber"
                         />
-                        <label htmlFor="city">City</label>
+                        <label htmlFor="phoneNumber">Phone Number</label>
                     </div>
                     <div className="alignRight">
                         <button
                         type="button"
                         disabled={this.state.loadingStatus}
-                        onClick={this.constructNewLocation}
+                        onClick={this.constructNewOwner}
                         >Submit</button>
                     </div>
                 </fieldset>
             </form>
-            </>
+        </>
         )
     }
 }
 
-export default LocationForm
+export default OwnerForm

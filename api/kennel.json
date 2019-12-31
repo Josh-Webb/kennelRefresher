@@ -1,100 +1,24 @@
 {
   "animals": [
-    {
-      "id": 1,
-      "name": "BB",
-      "breed": "Cat",
-      "owners": [
-        1,
-        2
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Sophie",
-      "breed": "German Sheperd",
-      "owners": [
-        3
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Pugsly",
-      "breed": "Pug",
-      "owners": [
-        4
-      ]
-    },
-    {
-      "name": "Jacob",
-      "breed": "Gerbil",
-      "id": 4
-    },
-    {
-      "name": "Stuart",
-      "id": 5
-    },
-    {
-      "name": "Barry",
-      "breed": "Gerbil",
-      "id": 6
-    }
+      { "id": 1, "name": "BB", "breed": "Cat", "owners": [ 1 , 2]},
+      { "id": 2, "name": "Sophie", "breed": "German Sheperd", "owners": [ 3 ] },
+      { "id": 3, "name": "Pugsly", "breed": "Pug", "owners": [ 4 ] }
   ],
   "locations": [
-    {
-      "id": 1,
-      "address": "1901 Sevier St",
-      "city": "Nashville, TN"
-    },
-    {
-      "id": 2,
-      "address": "912th S 14th St",
-      "city": "Nashville, TN"
-    },
-    {
-      "id": 3,
-      "address": "408 West College St",
-      "city": "Greenbrier, TN"
-    }
+      { "id": 1, "address": "1901 Sevier St", "city": "Nashville, TN"},
+      { "id": 2, "address": "912th S 14th St", "city": "Nashville, TN"},
+      { "id": 3, "address": "408 West College St", "city": "Greenbrier, TN"}
+
   ],
   "owners": [
-    {
-      "id": 1,
-      "phoneNumber": "615-389-0465",
-      "name": "Josh"
-    },
-    {
-      "id": 2,
-      "phoneNumber": "555-282-0082",
-      "name": "Elena"
-    },
-    {
-      "id": 3,
-      "phoneNumber": "615-989-0077",
-      "name": "Dexter"
-    },
-    {
-      "id": 4,
-      "phoneNumber": "615-643-2774",
-      "name": "Morgan"
-    }
+      { "id": 1, "phoneNumber": "615-389-0465", "name": "Josh"},
+      { "id": 2, "phoneNumber": "555-282-0082", "name": "Elena"},
+      { "id": 3, "phoneNumber": "615-989-0077", "name": "Dexter"},
+      { "id": 4, "phoneNumber": "615-643-2774", "name": "Morgan"}
   ],
   "employees": [
-    {
-      "id": 3,
-      "name": "George"
-    },
-    {
-      "name": "Test",
-      "id": 4
-    },
-    {
-      "name": "Clint",
-      "id": 5
-    },
-    {
-      "name": "Why",
-      "id": 6
-    }
+      { "id": 1, "name": "Debra"},
+      { "id": 2, "name": "Holden"},
+      { "id": 3, "name": "George"}
   ]
 }

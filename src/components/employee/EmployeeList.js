@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import EmployeeCard from './EmployeeCard'
-import EmployeeManager from '../../modules/EmployeeManager'
+import EmployeeManager 
+from '../../modules/EmployeeManager'
 
 class EmployeeList extends Component {
     state = {
@@ -26,8 +27,7 @@ class EmployeeList extends Component {
                     <button type="button"
                         className="btn"
                         onClick={() => {this.props.history.push("/employees/new")}}>
-                            New employee
-
+                            New Employee
                     </button>
                 </section>
                 {this.state.employees.map(employee => <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee}/>)}

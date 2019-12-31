@@ -30,6 +30,7 @@ class EmployeeForm extends Component {
     };
 
     render(){
+        console.log("Employee Form: RENDER");
         return(
             <>
             <form>
