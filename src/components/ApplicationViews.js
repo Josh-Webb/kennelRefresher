@@ -53,7 +53,11 @@ class ApplicationViews extends Component {
         */}
         {/*Without V V V the EXACT PATH it will cause unwanted renders whe asking for specificity.  It's what was breaking my form.*/}
         <Route exact path="/locations" render={(props) => {
-          return <LocationList {...props}/>
+          if (this.isAuthenticated()){
+            return <LocationList {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
         }} />
         <Route path="/locations/:locationId(\d+)" render={(props) => {
           return <LocationDetail locationId={parseInt(props.match.params.locationId)} {...props}/>
@@ -62,13 +66,21 @@ class ApplicationViews extends Component {
           return <LocationForm {...props} />
         }} />
         <Route exact path="/employees" render={(props) => {
-          return <EmployeeList {...props}/>
+          if (this.isAuthenticated()){
+            return <EmployeeList {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
         }} />
         <Route path="/employees/new" render={(props) => {
           return <EmployeeForm {...props} />
         }} />
         <Route exact path="/owners" render={(props) => {
-          return <OwnerList {...props}/>
+          if (this.isAuthenticated()){
+            return <OwnerList {...props}/>
+            } else {
+              return <Redirect to="/login" />
+            }
         }} />
         <Route path="/owners/new" render={(props) => {
           return <OwnerForm {...props}/>
