@@ -24,6 +24,7 @@ class AnimalDetail extends Component {
   }
 
   render() {
+      
     return (
       <div className="card">
         <div className="card-content">
@@ -37,6 +38,7 @@ class AnimalDetail extends Component {
         </div>
       </div>
     );
+
   }
 
   handleDelete = () => {

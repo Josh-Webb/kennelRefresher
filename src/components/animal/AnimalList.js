@@ -34,7 +34,7 @@ render(){
                 Admit Animal
             </button>
             </section>
-                {this.state.animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={this.deleteAnimal}/>)}
+                {this.state.animals.map(animal => <AnimalCard key={animal.id} animal={animal} deleteAnimal={this.deleteAnimal}{...this.props}/>)}
             </div>
         );
     }

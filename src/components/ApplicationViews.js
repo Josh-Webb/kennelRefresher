@@ -13,6 +13,7 @@ import LocationForm from './location/LocationForm'
 import EmployeeForm from './employee/EmployeeForm'
 import OwnerForm from './owner/OwnerForm'
 import Login from './auth/Login'
+import AnimalEditForm from './animal/AnimalEditForm'
 
 
 class ApplicationViews extends Component {
@@ -35,13 +36,20 @@ class ApplicationViews extends Component {
             return <Redirect to="/login" />
           }
         }} />
-        <Route path="/animals/:animalId(\d+)" render={(props) => {
+        <Route exact path="/animals/:animalId(\d+)" render={(props) => {
           // Pass the animalId to the AnimalDetailComponent
           return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props}/>
+        
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
         }} />
+        <Route
+          path="/animals/:animalId(\d+)/edit" render={props => {
+            return <AnimalEditForm {...props} />
+          }}
+        />
+        
 
         {/*
           This is a new route to handle a URL with the following pattern:
