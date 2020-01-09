@@ -1,4 +1,5 @@
-const remoteURL = "https://kennelapi.herokuapp.com/"
+// const remoteURL = "https://kennelapi.herokuapp.com/"
+const remoteURL = "http://localhost:5002"
 
 export default {
   get(id) {

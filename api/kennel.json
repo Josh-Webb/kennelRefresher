@@ -21,6 +21,11 @@
       "owners": [
         4
       ]
+    },
+    {
+      "name": "Theodore",
+      "breed": "Panda",
+      "id": 4
     }
   ],
   "locations": [

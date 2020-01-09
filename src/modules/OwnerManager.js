@@ -1,4 +1,5 @@
-const remoteURL = "https://kennelapi.herokuapp.com/"
+// const remoteURL = "https://kennelapi.herokuapp.com/"
+const remoteURL = "http://localhost:5002"
 
 export default {
     get(id) {
@@ -8,7 +9,7 @@ export default {
         return fetch(`${remoteURL}/owners`).then(result => result.json())
     },
     delete(id) {
-        return fetch(`https://kennelapi.herokuapp.com//owners/${id}`, {
+        return fetch(`${remoteURL}/owners/${id}`, {
             method: "DELETE"
         })
         .then(result => result.json())
