@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import AnimalManager from '../../modules/AnimalManager';
 import './AnimalForm.css'
+import EmployeeManager from '../../modules/EmployeeManager';
 
 class AnimalForm extends Component {
     state = {
         animalName: "",
         breed: "",
+        employeeId: null,
         loadingStatus: false,
+        employees: []
     };
+
+    componentDidMount() {
+        EmployeeManager.getAll()
+            .then(employees => this.setState({ employees }))
+    }
 
     handleFieldChange = evt => {
         const stateToChange = {};
@@ -26,6 +34,7 @@ class AnimalForm extends Component {
             const animal = {
                 name: this.state.animalName,
                 breed: this.state.breed,
+                employeeId: parseInt(this.state.employeeId)
             };
 
             // Create the animal and redirect user to animal list
@@ -57,7 +66,20 @@ class AnimalForm extends Component {
                         placeholder="Breed"
                         />
                         <label htmlFor="breed">Breed</label>
+
+                    <label htmlFor="employee">Employee</label>
+                    <select 
+                      name="employee"
+                      onChange={this.handleFieldChange}
+                      id="employeeId"
+                      value={this.employeeId}
+                      >
+                        <option key="employeeselect">Select Employee</option>
+                        {this.state.employees.map(employee => <option key={employee.id} value={employee.id}>{employee.name}</option>)}
+                        
+                    </select>
                     </div>
+
                     <div className="alignRight">
                         <button
                         type="button"
